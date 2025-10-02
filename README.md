@@ -2,7 +2,7 @@
 
 Aplicação desenvolvida para a disciplina **Frameworks Web I**.
 
-## 📌 Título e Descrição
+## 📌Descrição
 Catálogo de filmes com **React (Vite)** consumindo a **API do The Movie Database (TMDB v3)**.  
 Demonstra **componentização**, **hooks** (`useState`, `useEffect`), **manipulação de eventos**, **consumo de API com axios**, **roteamento** (`react-router-dom`), **paginação**, **tratamento de loading/erro**, e **deploy** na Vercel.
 
