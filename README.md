@@ -1,37 +1,83 @@
-# Catálogo de Filmes (React + TMDB)
+# 🎬 Catálogo de Filmes — React + TMDB
 
-Aplicação React (Vite) para a disciplina **Frameworks Web I**:
+Aplicação desenvolvida para a disciplina **Frameworks Web I**.
 
-- **Roteamento** com React Router (Início, Filmes, Detalhes, Sobre)
-- **Hooks** (estado, efeito) + atalho de teclado **CTRL+K**
-- **Eventos** (clique, input, submit)
-- **Consumo da API**: The Movie Database (TMDB)
-- **Filtro por ano** e **busca por título**
-- **CSS custom** aplicado em todos os componentes
-- **Deploy** simples no CodeSandbox
+## 📌 Título e Descrição
+Catálogo de filmes com **React (Vite)** consumindo a **API do The Movie Database (TMDB v3)**.  
+Demonstra **componentização**, **hooks** (`useState`, `useEffect`), **manipulação de eventos**, **consumo de API com axios**, **roteamento** (`react-router-dom`), **paginação**, **tratamento de loading/erro**, e **deploy** na Vercel.
 
-## 🔑 Configuração da chave TMDB
+## 👥 Integrantes
+- Nome: Nayara de Melo Costa
 
-1. Crie uma conta em https://www.themoviedb.org/ e gere uma **API Key (v3)**.
-2. Crie um arquivo **`.env`** na raiz do projeto com:
+## ✨ Funcionalidades
+- Listagem de **filmes populares** (TMDB).
+- **Busca** por título e **filtro por ano** (página “Filmes”).
+- **Paginação** (Anterior/Próxima) usando `total_pages` da TMDB.
+- Página de **Detalhes** do filme com nota, duração, gêneros e sinopse.
+- **Roteamento**: `/` (Home), `/filmes`, `/filmes/:id`, `/sobre`, `*` (404).
+- **UI**: componentes reutilizáveis (Header, Button, Card, SearchBar, MovieCard, Pagination, Loader, ErrorMessage).
+- **Acessibilidade**: labels/aria básicos e foco via **Ctrl+K** na busca.
+
+## 🏗️ Tecnologias
+- **React + Vite**
+- **Axios** (cliente HTTP centralizado)
+- **React Router DOM**
+- CSS simples (grid responsiva, cards/botões)
+
+## 📁 Estrutura (resumo)
 ```
-VITE_TMDB_API_KEY=SEU_TOKEN_AQUI
+src/
+  components/
+    ui/Button.jsx
+    ui/Card.jsx
+    Header.jsx
+    SearchBar.jsx
+    MovieCard.jsx
+    Pagination.jsx
+    Loader.jsx
+    ErrorMessage.jsx
+  pages/
+    Home.jsx
+    Movies.jsx
+    MovieDetails.jsx
+    About.jsx
+    NotFound.jsx
+  services/
+    http.js       # axios preconfigurado
+    tmdb.js       # funções da API (popular, search, discover, details)
+  index.css
+  main.jsx
+  App.jsx
 ```
-> Em CodeSandbox, vá em **Project Settings → Environment Variables** e adicione `VITE_TMDB_API_KEY`.
 
-⚠️ A chave ficará no front-end (exposta). Para trabalhos acadêmicos é aceitável. Em produção, use um backend/proxy.
+## ▶️ Como executar (local)
+1. Clone o repositório
+   ```bash
+   git clone https://github.com/nayaramelo67-netizen/filmes-app.git
+   cd filmes-app
+   ```
+2. Instale as dependências
+   ```bash
+   npm install
+   ```
+3. Crie o arquivo **.env** na raiz com sua chave v3 do TMDB:
+   ```ini
+   VITE_TMDB_API_KEY=SUA_CHAVE_TMDB_V3
+   ```
+4. Rode em desenvolvimento
+   ```bash
+   npm run dev
+   ```
+5. Acesse: `http://localhost:5173`
 
-## ▶️ Rodar localmente
+> **Importante:** não faça commit do `.env`. Um **`.env.example`** é fornecido como referência.
 
-```bash
-npm install
-npm run dev
-```
+## 🔗 Links
+- **Aplicação (Vercel):** https://filmes-app-phi.vercel.app/
+- **Repositório (GitHub):** https://github.com/nayaramelo67-netizen/filmes-app.git
+- **Sandbox (CodeSandbox):** https://codesandbox.io/p/github/nayaramelo67-netizen/filmes-app/main?import=true
 
-## Rotas principais
-- `/` — Página inicial com **populares** e busca
-- `/filmes` — Catálogo com **filtro por ano** e busca
-- `/filmes/:id` — **Detalhes** do filme
-- `/sobre` — Descrição do que o projeto demonstra
+---
 
-Boa entrega! 🎬
+### Licença
+Projeto acadêmico — uso didático.
